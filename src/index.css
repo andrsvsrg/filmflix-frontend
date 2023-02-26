@@ -1,13 +1,72 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #191A1D;
+        color: white;
+    }
+}
+@layer components {
+    .container {
+        max-width: 1500px;
+        margin-top: 65px;
+        padding: 60px;
+    }
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/*--- BURGER BUTTON  ---*/
+.burger {
+    height: 20px;
+    position: relative;
+    width: 30px;
 }
+
+.burger-line {
+    display: flex;
+    width: 30px;
+    height: 2px;
+    background: white;
+    transition: .3s all ease;
+}
+
+.top-line {
+    position: absolute;
+    left:0;
+    top:0;
+}
+
+.mid-line {
+    position: absolute;
+    right:0;
+    width: 22px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.bottom-line {
+    position: absolute;
+    left:0;
+    bottom: 0;
+}
+
+.burger.active > .top-line {
+    transform: translateY(8px) rotate(45deg);
+    transition: .3s all ease;
+}
+
+.burger.active > .mid-line {
+    opacity: 0;
+    transition: .3s all ease;
+}
+
+.burger.active > .bottom-line {
+    transform: translateY(-10px) rotate(-45deg);
+    transition: .3s all ease;
+}
+
+/*--- BURGER BUTTON  ---*/
