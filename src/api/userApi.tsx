@@ -1,26 +1,31 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
-import {User} from "../models/IUser";
-import {Tokens} from "../models/IResponses";
+import {IUser} from "../models/IUser";
+import {IErrorResponse, ILoginData, ITokens} from "../models/IResponses";
 
 
 
-
+type IRegisterUserResponse = ITokens | IErrorResponse
 
 export const userApi = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8000/api" }),
+  baseQuery: fetchBaseQuery({baseUrl: "http://localhost:8000/api"}),
   endpoints: (builder) => ({
-    // getTokens: builder.query({
-    //   query:() => 'token/'
-    // }) ,
-    registerUser: builder.mutation<Tokens, User>({
+
+    registerUser: builder.mutation<IRegisterUserResponse, IUser>({
       query: (userData) => ({
         url: "/register/",
         method: "POST",
         body: userData,
       }),
     }),
+    loginUser: builder.mutation<ITokens, ILoginData>({
+      query: (loginData) => ({
+        url: "/token/",
+        method: "POST",
+        body: loginData,
+      }),
+    }),
   }),
 });
 
-export const { useRegisterUserMutation } = userApi;
+export const {useRegisterUserMutation, useLoginUserMutation} = userApi;

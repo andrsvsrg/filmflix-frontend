@@ -1,15 +1,14 @@
-export interface Tokens {
+export interface ITokens {
   access: string;
   refresh: string;
 }
 
-export interface RegisterResponse {
-  data?: {
-    access: string;
-    refresh: string;
-  },
-  error?: {
-    error:string;
-    status:string;
-  }
+export interface  IErrorResponse {
+  error: string[];
+  status: string;
+}
+
+export interface ILoginData {
+  email:string,
+  password:string
 }

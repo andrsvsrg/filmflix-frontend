@@ -9,7 +9,7 @@ function Navigation() {
 
   const [isVisibleFullMenu , setIsVisibleFullMenu] = useState(false)
   const { breakPoint } = useAppSelector(state => state.breakpointReducer)
-
+  const { accessToken } =useAppSelector(state => state.tokensSlice)
   function toggleMobileMenu(): void {
     setIsVisibleFullMenu(prev => !prev)
   }
@@ -18,14 +18,15 @@ function Navigation() {
     <nav className="fixed top-0 h-[65px] flex w-full flex-row px-4 py-2 bg-[#191A1D]">
       <div className="flex w-full flex-row justify-between">
         <Logo/>
+
         {
-          breakPoint === 'lg'
+          breakPoint === 'l'
           &&
           <DesktopNav/>
         }
-        {isVisibleFullMenu && breakPoint !== 'lg' && <MobileMenu/>}
+        {isVisibleFullMenu && breakPoint !== 'l' && <MobileMenu/>}
         {
-          breakPoint !== 'lg'
+          breakPoint !== 'l'
           &&
           <ButtonMenuMobile onClick={toggleMobileMenu} />
         }

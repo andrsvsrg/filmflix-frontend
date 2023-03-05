@@ -1,42 +1,79 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from "../uiBricks/Button";
 import {useRegisterUserMutation} from "../../api/userApi";
-import {User} from "../../models/IUser";
+import {IUser} from "../../models/IUser";
+import Cookies from 'js-cookie';
+import {toast} from 'react-toastify';
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import TokensSlice, {setAccessToken, setRefreshToken} from "../../store/reducers/TokensSlice";
 
 
 function Registration() {
 
-  const [first_name, setName] = useState('')
+  const [first_name, setName] = useState('')    // todo all in one useState {..}
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [birthday, setBirthDate] = useState('')
   const [gender, setGender] = useState('')
-  const [tokens, setTokens] = useState({ access: '', refresh: ''})
 
 
-  const [registerUser, {isError, isLoading, isSuccess}] = useRegisterUserMutation();
+  const {accessToken, refreshToken} = useAppSelector(state => state.tokensSlice)
+  const dispatch = useAppDispatch()
+
+  const [registerUser, {isError, error, isSuccess, data, status}] = useRegisterUserMutation();
 
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const id = toast.loading("Please wait...", {closeOnClick: true})
 
-    const birthDay = birthday.replace(/(\d*)-(\d*)-(\d*)/,'$3/$2/$1')
-    const newUser: User = { first_name, password, email, birthday:birthDay, gender};
 
-    const response = await registerUser(newUser);  // TODO обработчик если ошибка не очищаем данные и добавляем уведомление
-                                                   // TODO сохранять токены в куки
-    console.log(response)
-    setName('');
-    setPassword('');
-    setEmail('');
-    setBirthDate('')
+    const birthDay = birthday.replace(/(\d*)-(\d*)-(\d*)/, '$3/$2/$1')
+    const newUser: IUser = {first_name, password, email, birthday: birthDay, gender};
+
+    await registerUser(newUser);
+    console.log(status)
+    console.log(isError)
+    console.log(isSuccess)
+    if (isError) {
+      let errorText
+      if (data) {
+        if ('error' in data) {
+          errorText = data.error.join(', ')
+        }
+      }
+      console.log(error)
+      if (!errorText) errorText = 'registration error'
+      toast.update(id, {render: `${errorText}  🤯`, type: "error", isLoading: false, closeButton: true});
+    }
+
+    if (isSuccess) {
+      toast.update(id, {render: "successfully, You can log in 👌", type: "success", isLoading: false, autoClose: 3000});
+      // if (data) {
+      //   if ('access' in data) {
+      //     dispatch(setAccessToken(data.access))
+      //     dispatch(setRefreshToken(data.refresh))
+      //     Cookies.set('access_token', data.access);
+      //     Cookies.set('refresh_token', data.refresh);
+      //   }
+      // }
+      setName('');
+      setPassword('');
+      setEmail('');
+      setBirthDate('')
+    }
+
+    if (status === 'uninitialized') {
+      toast.update(id, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
+    }
   };
-
 
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="registration-form bg-bg-login px-4 py-5 rounded-[20px] min-w-[240px] flex flex-col h-[480px]" action="">
+      <form onSubmit={handleSubmit}
+            className="registration-form bg-bg-login px-4 py-5 rounded-[20px] min-w-[240px] flex flex-col h-[480px]"
+            action="">
         <span className="text-[22px] mb-2 text-center">Регистрация</span>
         <input className="outline-0 bg-inherit pt-2 mt-[13px] w-full border-b-[1px] mb-5"
                placeholder="Имя *"
@@ -62,9 +99,11 @@ function Registration() {
                value={birthday}
                onChange={(e) => setBirthDate(e.target.value)}
         />
-        <label className="text-[16px]"><input type="radio" value="MALE" name="gender" onChange={(e) => setGender(e.target.value)}/> <span
+        <label className="text-[16px]"><input type="radio" value="MALE" name="gender"
+                                              onChange={(e) => setGender(e.target.value)}/> <span
           className="pl-2 leading-10">Мужчина</span> </label>
-        <label className="text-[16px] mb-2"><input type="radio" value="FEMALE" name="gender" onChange={(e) => setGender(e.target.value)} /> <span
+        <label className="text-[16px] mb-2"><input type="radio" value="FEMALE" name="gender"
+                                                   onChange={(e) => setGender(e.target.value)}/> <span
           className="pl-2 leading-10">Женщина</span> </label>
         <Button type="submit" className="py-3"><span>Регистрация</span></Button>
       </form>

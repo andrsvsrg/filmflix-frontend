@@ -1,20 +1,20 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-interface InitBreakPoint {
-  breakPoint: string
+export interface IBreakPoint {
+  breakPoint: 'xxs' | 'xs' | 's' | 'm' | 'l'
 }
-const initialState: InitBreakPoint ={
-  breakPoint: ''
+const initialState: IBreakPoint ={
+  breakPoint: 'l'
 }
 
 export const BreakpointSlice = createSlice({
-  name: 'breakpoint',
+  name: "breakpoint",
   initialState,
   reducers: {
-     changeBreakPoint(state, action: PayloadAction<string>) {
-       state.breakPoint = action.payload
-     }
-  }
-})
+    changeBreakPoint: (state, action: PayloadAction<IBreakPoint['breakPoint']>) => {
+      state.breakPoint = action.payload;
+    },
+  },
+});
 
 export default BreakpointSlice.reducer

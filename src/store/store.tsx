@@ -1,10 +1,12 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {userApi} from "../api/userApi";
 import breakpointReducer from './reducers/BreakpointSlice'
+import tokensSlice from "./reducers/TokensSlice";
 
 const rootReducer = combineReducers({
   [userApi.reducerPath]: userApi.reducer,
-  breakpointReducer
+  breakpointReducer,
+  tokensSlice
 })
 
 export const setupStore = () => {

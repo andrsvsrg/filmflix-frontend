@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import useResizeObserver from "@react-hook/resize-observer";
 import {BreakpointSlice} from "../store/reducers/BreakpointSlice";
 import {useAppDispatch, useAppSelector} from "./redux";
+import {breakPoints} from '../constants/constants'
 
 function UseBreakpoint() {
   const { changeBreakPoint } = BreakpointSlice.actions
@@ -11,17 +12,25 @@ function UseBreakpoint() {
 
   useResizeObserver(ref, (entry) => {
     const width = entry.contentRect.width;
-    if (width <= 990) {
+    if (width <= breakPoints['xxs']) {
+      if (breakPoint !== 'xxs') {
+        dispatch(changeBreakPoint('xxs'))
+      }
+    } else if (width <= breakPoints['xs']) {
       if (breakPoint !== 'xs') {
         dispatch(changeBreakPoint('xs'))
       }
-    } else if (width <= 1280) {
-      if (breakPoint !== 'sm') {
-        dispatch(changeBreakPoint('sm'))
+    } else if (width <= breakPoints['s']) {
+      if (breakPoint !== 's') {
+        dispatch(changeBreakPoint('s'))
+      }
+    } else if (width <= breakPoints['m']) {
+      if (breakPoint !== 'm') {
+        dispatch(changeBreakPoint('m'))
       }
     } else {
-      if (breakPoint !== 'lg') {
-        dispatch(changeBreakPoint('lg'))
+      if (breakPoint !== 'l') {
+        dispatch(changeBreakPoint('l'))
       }
     }
   });

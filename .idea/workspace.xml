@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/userApi.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FilmCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/ButtonMenuMobile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/Logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/MenuDesktop.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/MobileMenu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/SearchDesktop.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/SearchIcon.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/SearchInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/contentPcSm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/contentTabBig.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/uiBricks/Button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/uiBricks/Input.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/redux.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useBreakpoint.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/home-man.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/rating_bot.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/rating_top.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/search-actor.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/search-films.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/search-users.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/IResponses.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/IUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/MultfilmsPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SeriesPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/BreakpointSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="adaptive navigation">
+      <change afterPath="$PROJECT_DIR$/src/components/footer/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/CatalogFilmsBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/ImgMan.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/ImgManButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/styleHelpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/my-bookmark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/photo_none_man.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/photo_none_woman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/userApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/contentPcSm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/Description.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/contentTabBig.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useBreakpoint.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useBreakpoint.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IResponses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IResponses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/BreakpointSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/BreakpointSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,8 +124,26 @@
       <workItem from="1677053647846" duration="13000" />
       <workItem from="1677163417382" duration="893000" />
       <workItem from="1677319707046" duration="16200000" />
-      <workItem from="1677405590616" duration="3940000" />
+      <workItem from="1677405590616" duration="16901000" />
+      <workItem from="1677578364584" duration="661000" />
+      <workItem from="1677657760281" duration="592000" />
+      <workItem from="1677761133834" duration="20000" />
+      <workItem from="1677836597179" duration="9000" />
+      <workItem from="1677922922831" duration="7219000" />
+      <workItem from="1677933230237" duration="636000" />
+      <workItem from="1677960723117" duration="823000" />
+      <workItem from="1677962146322" duration="7809000" />
+      <workItem from="1678010571410" duration="1701000" />
+      <workItem from="1678050270067" duration="85000" />
     </task>
+    <task id="LOCAL-00001" summary="adaptive navigation">
+      <created>1677415927712</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677415927712</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="adaptive navigation" />
+    <option name="LAST_COMMIT_MESSAGE" value="adaptive navigation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

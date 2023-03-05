@@ -4,14 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {  // меняем
-    screens: {
-      'xl': '1280px',
-      'pc-big': {'max': '1500px'} ,
-      'pc-sm':{'max': '1280px'} ,
-      'tab-big' : {'max': '991px'},
-      'tab-sm': {'max': '767px'},
-      'pc-ph':  {'max': '576px'},
-    },
+    // screens: {
+    //   'xl': '1280px',
+    //   'pc-big': {'max': '1500px'} ,
+    //   'pc-sm':{'max': '1280px'} ,
+    //   'tab-big' : {'max': '991px'},
+    //   'tab-sm': {'max': '767px'},
+    //   'pc-ph':  {'max': '576px'},
+    // },
     container: {
       center: true
     },
