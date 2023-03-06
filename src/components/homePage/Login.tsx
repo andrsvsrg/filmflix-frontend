@@ -1,16 +1,20 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from "../uiBricks/Button";
-import {useLoginUserMutation} from "../../api/userApi";
+import {IResponseUserData, useLazyGetUserDataQuery, useLoginUserMutation} from "../../api/userApi";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
-import {setAccessToken, setRefreshToken} from "../../store/reducers/TokensSlice";
+import {setAccessToken, setRefreshToken, setUserData} from "../../store/reducers/TokensSlice";
 import Cookies from 'js-cookie';
 import {toast} from 'react-toastify';
+
+
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  // const userData = useAppSelector(state => state.tokensSlice.userData)
   const [loginUser, {isError, isSuccess, data, error, status}] = useLoginUserMutation()
+  const [getUserData, { data: receivedUserData, error: errorUserData, isSuccess:isSuccessUser  }] = useLazyGetUserDataQuery();
 
   const dispatch = useAppDispatch()
 
@@ -22,25 +26,30 @@ function Login() {
     console.log(isSuccess)
     console.log(isError)
     if (isSuccess) {
-      toast.update(id, {render: "successfully, You can log in 👌", type: "success", isLoading: false, autoClose: 3000});
       if (data) {
         dispatch(setAccessToken(data.access))
         dispatch(setRefreshToken(data.refresh))
         Cookies.set('access_token', data.access);
         Cookies.set('refresh_token', data.refresh);
+        await getUserData(undefined)
+        if(receivedUserData && isSuccessUser ) {
+          dispatch(setUserData(receivedUserData))
+        }
       }
+      toast.update(id, {render: "successfully, You are log in 👌", type: "success", isLoading: false, autoClose: 3000});
       setEmail('')
       setPassword('')
     }
     if (isError) {
       console.log(error)
-      toast.update(id, {render: `${error}  🤯`, type: "error", isLoading: false, closeButton: true});
+      toast.update(id, {render: `${JSON.stringify(error)}  🤯`, type: "error", isLoading: false, closeButton: true});
     }
     if(status === 'uninitialized') {
       toast.update(id, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
     }
-
   }
+
+
 
   return (
     <div className="login-form bg-bg-login px-4 py-5 rounded-[20px] flex flex-col h-[295px]">

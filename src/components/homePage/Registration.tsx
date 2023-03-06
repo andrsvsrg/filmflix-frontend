@@ -17,8 +17,8 @@ function Registration() {
   const [gender, setGender] = useState('')
 
 
-  const {accessToken, refreshToken} = useAppSelector(state => state.tokensSlice)
-  const dispatch = useAppDispatch()
+  // const {accessToken, refreshToken} = useAppSelector(state => state.tokensSlice)
+  // const dispatch = useAppDispatch()
 
   const [registerUser, {isError, error, isSuccess, data, status}] = useRegisterUserMutation();
 
