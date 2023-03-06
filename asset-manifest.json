@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/filmflix-frontend/static/css/main.cff91ea3.css",
-    "main.js": "/filmflix-frontend/static/js/main.48ee57aa.js",
+    "main.js": "/filmflix-frontend/static/js/main.446c91a0.js",
     "static/media/logo.svg": "/filmflix-frontend/static/media/logo.4b7b4c3831a165732280c556868a6111.svg",
     "static/media/search-users.svg": "/filmflix-frontend/static/media/search-users.2cb324e3bad20196b1431ed7c2902869.svg",
     "static/media/search-actor.svg": "/filmflix-frontend/static/media/search-actor.44f976947209732d4d2f18cbbc11bbdf.svg",
@@ -10,10 +10,10 @@
     "static/media/search-films.svg": "/filmflix-frontend/static/media/search-films.0ee0b495083b33b1e5d0420ccf56a0ee.svg",
     "index.html": "/filmflix-frontend/index.html",
     "main.cff91ea3.css.map": "/filmflix-frontend/static/css/main.cff91ea3.css.map",
-    "main.48ee57aa.js.map": "/filmflix-frontend/static/js/main.48ee57aa.js.map"
+    "main.446c91a0.js.map": "/filmflix-frontend/static/js/main.446c91a0.js.map"
   },
   "entrypoints": [
     "static/css/main.cff91ea3.css",
-    "static/js/main.48ee57aa.js"
+    "static/js/main.446c91a0.js"
   ]
 }
