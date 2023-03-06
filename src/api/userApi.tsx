@@ -2,6 +2,7 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/dist/query/react";
 import {IUser} from "../models/IUser";
 import {IErrorResponse, ILoginData, ITokens} from "../models/IResponses";
 import {useAppSelector} from "../hooks/redux";
+import {RootState} from "../store/store";
 
 
 export interface IResponseUserData {
@@ -25,14 +26,15 @@ type IRegisterUserResponse = ITokens | IErrorResponse
 
 export const userApi = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({baseUrl: "http://localhost:8000/api",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:8000/api",
     prepareHeaders: (headers, { getState }) => {
-      const accessToken = useAppSelector((state) => state.tokensSlice.accessToken)
+      const accessToken = (getState() as RootState).tokensSlice.accessToken;
       if (accessToken) {
         headers.set("Authorization", `Token ${accessToken}`);
       }
       return headers;
-    }
+    },
   }),
 
   endpoints: (builder) => ({
