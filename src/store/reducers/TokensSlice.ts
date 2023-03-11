@@ -3,7 +3,7 @@ import { createSlice, PayloadAction, Slice } from "@reduxjs/toolkit";
 interface TokensSlice {
   accessToken: string | null;
   refreshToken: string | null;
-  userData?: IUserData
+  userData: IUserData
 }
 interface IUserData {
   email: string,
@@ -32,13 +32,17 @@ const TokensSlice: Slice<TokensSlice> = createSlice({
     setUserData: (state, action: PayloadAction<IUserData>) => {
       state.userData = action.payload
     },
-    clearTokens: (state) => {
+    logoutUser: (state) => {
       state.accessToken = null;
       state.refreshToken = null;
+      state.userData = {
+        email: '',
+        date_joined: '',
+      }
     },
   },
 });
 
-export const { setAccessToken, setRefreshToken, clearTokens, setUserData } = TokensSlice.actions;
+export const {logoutUser, setAccessToken, setRefreshToken, clearTokens, setUserData } = TokensSlice.actions;
 
 export default TokensSlice.reducer;

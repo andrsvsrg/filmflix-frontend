@@ -1,10 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Button from "../uiBricks/Button";
 import {IResponseUserData, useLazyGetUserDataQuery, useLoginUserMutation} from "../../api/userApi";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {setAccessToken, setRefreshToken, setUserData} from "../../store/reducers/TokensSlice";
 import Cookies from 'js-cookie';
 import {toast} from 'react-toastify';
+
+
+
 
 
 
@@ -17,10 +20,11 @@ function Login() {
   const [getUserData, { data: receivedUserData, error: errorUserData, isSuccess:isSuccessUser  }] = useLazyGetUserDataQuery();
 
   const dispatch = useAppDispatch()
-  let popupId: any  // todo correct types
+  const toastId = 'toastId';
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    popupId = toast.loading("Please wait...", {closeOnClick: true})
+    toast.loading("Please wait...", {closeOnClick: true,  toastId: toastId})
     await loginUser({email, password})
   }
   const getUserDataF = async() => {
@@ -42,16 +46,16 @@ function Login() {
         Cookies.set('refresh_token', data.refresh);
         getUserDataF()
       }
-      toast.update(popupId, {render: "successfully, You are log in 👌", type: "success", isLoading: false, autoClose: 3000});
+      toast.update(toastId, {render: "successfully, You are log in 👌", type: "success", isLoading: false, autoClose: 3000});
       setEmail('')
       setPassword('')
     }
     if (isError) {
       console.log(error)
-      toast.update(popupId, {render: `${JSON.stringify(error)}  🤯`, type: "error", isLoading: false,autoClose: 10000});
+      toast.update(toastId, {render: `${JSON.stringify(error)}  🤯`, type: "error", isLoading: false,autoClose: 10000});
     }
     if(status === 'uninitialized') {
-      toast.update(popupId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
+      toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
     }
   }, [isSuccess, isError, status])
 

@@ -20,21 +20,21 @@ function Registration() {
   // const {accessToken, refreshToken} = useAppSelector(state => state.tokensSlice)
   // const dispatch = useAppDispatch()
 
-  const [registerUser, {isError, error, isSuccess, data, status}] = useRegisterUserMutation();
+  const [registerUser, {isError, error, isSuccess, data, status}]  = useRegisterUserMutation();
 
+  const toastId = 'toastId';
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const id = toast.loading("Please wait...", {closeOnClick: true})
-
+    toast.loading("Please wait...", {closeOnClick: true,  toastId: toastId})
 
     const birthDay = birthday.replace(/(\d*)-(\d*)-(\d*)/, '$3/$2/$1')
     const newUser: IUser = {first_name, password, email, birthday: birthDay, gender};
 
     await registerUser(newUser);
-    console.log(status)
-    console.log(isError)
-    console.log(isSuccess)
+  };
+
+  useEffect(() => {
     if (isError) {
       let errorText
       if (data) {
@@ -42,13 +42,13 @@ function Registration() {
           errorText = data.error.join(', ')
         }
       }
-      console.log(error)
+
       if (!errorText) errorText = 'registration error'
-      toast.update(id, {render: `${errorText}  🤯`, type: "error", isLoading: false, closeButton: true});
+      toast.update(toastId, {render: `${errorText}  🤯`, type: "error", isLoading: false, autoClose: 10000,  className: 'rotateY animated'});
     }
 
     if (isSuccess) {
-      toast.update(id, {render: "successfully, You can log in 👌", type: "success", isLoading: false, autoClose: 3000});
+      toast.update(toastId, {render: "successfully, You can log in 👌", type: "success", isLoading: false, autoClose: 3000, className: 'rotateX animated'});
       // if (data) {
       //   if ('access' in data) {
       //     dispatch(setAccessToken(data.access))
@@ -64,9 +64,9 @@ function Registration() {
     }
 
     if (status === 'uninitialized') {
-      toast.update(id, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
+      toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000, className: 'rotateY animated'});
     }
-  };
+  }, [isSuccess, isError, status])
 
 
   return (

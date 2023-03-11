@@ -4,13 +4,23 @@ import React, {useState} from 'react';
 import Button from "../uiBricks/Button";
 import {Link} from "react-router-dom";
 import MenuDesktop from "./MenuDesktop";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import {logoutUser} from "../../store/reducers/TokensSlice";
+import {toast} from "react-toastify";
 
 function DesktopNav() {
 
   const [isOpenSearch, setIsOpenSearch] = useState(false)
+  const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
+  const dispatch = useAppDispatch()
 
-  function searchToggle() : void {
+  function searchToggle(): void {
     setIsOpenSearch(prev => !prev)
+  }
+
+  function logoutHandler() {
+    dispatch(logoutUser(''))
+    toast.success("You have successfully logged out")
   }
 
   return (
@@ -24,12 +34,25 @@ function DesktopNav() {
             alt="search_site"
             className="h-[32px]"/>
         </div>
-        <Button className="mr-4">
-          <Link className="flex justify-center my-auto h-full" to="/">
-            <span className="my-auto">Войти</span>
-          </Link>
-        </Button>
-        <Link className="my-auto" to="/">Регистрация</Link>
+        {
+          userAccessToken
+            ?
+            <>
+              <Button onClick={logoutHandler} className="mr-4">
+                Выйти
+              </Button>
+            </>
+            :
+            <>
+              <Button className="mr-4">
+                <Link className="flex justify-center my-auto h-full" to="/">
+                  <span className="my-auto">Войти</span>
+                </Link>
+              </Button>
+              <Link className="my-auto" to="/">Регистрация</Link>
+            </>
+        }
+
       </div>
     </>
   );
