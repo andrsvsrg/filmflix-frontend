@@ -14,10 +14,9 @@ function HomePage() {
   const breakPoint = useAppSelector(store => store.breakpointReducer.breakPoint)
   const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
   console.log(breakPoint)
-  const classesLeft =  getClassesLeftColm(breakPoint)
+  const classesLeft = getClassesLeftColm(breakPoint)
   const classesRight = getClassesRightColm(breakPoint)
-  const classesPage = (breakPoint === 'xxs' || breakPoint === 'xs' ) ? 'flex-col' : 'flex-row'
-
+  const classesPage = (breakPoint === 'xxs' || breakPoint === 'xs') ? 'flex-col' : 'flex-row'
 
 
   return (
@@ -26,17 +25,17 @@ function HomePage() {
         <div className={`"left-column px-[15px] " ${classesLeft}`}>
           <Content/>
         </div>
-        <div className={"right-column mt-1 h-[850px] flex flex-col min-w-[240px] justify-between "+ classesRight}>
+        <div className={"right-column mt-1 h-[850px] flex flex-col min-w-[240px] justify-between " + classesRight}>
           {
             userAccessToken ?
+              <UserInfo/>
+              :
               <>
                 <Login/>
                 <Registration/>
               </>
-              :
-              <>
-                <UserInfo/>
-              </>
+
+
           }
 
         </div>
