@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="update Login.tsx with useEffect">
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="add logout">
+      <change afterPath="$PROJECT_DIR$/src/components/homePage/content/UserInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/MobileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/MobileMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +118,7 @@
       <workItem from="1678135241662" duration="2029000" />
       <workItem from="1678277150755" duration="33000" />
       <workItem from="1678529873295" duration="77000" />
-      <workItem from="1678531154528" duration="1902000" />
+      <workItem from="1678531154528" duration="3684000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -154,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678120814796</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add logout">
+      <created>1678533100246</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678533100246</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,7 +186,8 @@
     <MESSAGE value="fix package.json" />
     <MESSAGE value="fix Login.tsx" />
     <MESSAGE value="update Login.tsx with useEffect" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Login.tsx with useEffect" />
+    <MESSAGE value="add logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

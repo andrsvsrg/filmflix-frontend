@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
+import {Link} from "react-router-dom";
+import {toast} from "react-toastify";
+import Cookies from "js-cookie";
 
 
 import Button from "../uiBricks/Button";
-import {Link} from "react-router-dom";
 import MenuDesktop from "./MenuDesktop";
+
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {logoutUser} from "../../store/reducers/TokensSlice";
-import {toast} from "react-toastify";
+
 
 function DesktopNav() {
 
@@ -21,6 +24,8 @@ function DesktopNav() {
   function logoutHandler() {
     dispatch(logoutUser(''))
     toast.success("You have successfully logged out")
+    Cookies.set('access_token', '');
+    Cookies.set('refresh_token', '');
   }
 
   return (

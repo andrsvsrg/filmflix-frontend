@@ -15,7 +15,6 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // const userData = useAppSelector(state => state.tokensSlice.userData)
   const [loginUser, {isError, isSuccess, data, error, status}] = useLoginUserMutation()
   const [getUserData, { data: receivedUserData, error: errorUserData, isSuccess:isSuccessUser  }] = useLazyGetUserDataQuery();
 

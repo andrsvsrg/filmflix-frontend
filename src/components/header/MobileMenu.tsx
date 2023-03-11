@@ -7,9 +7,14 @@ import SearchInput from "./SearchInput";
 
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {logoutUser} from "../../store/reducers/TokensSlice";
+import Cookies from "js-cookie";
+
+interface Props {
+  closeMenu: () => void
+}
 
 
-function MobileMenu() {
+function MobileMenu({closeMenu}:Props) {
 
   const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
   const dispatch = useAppDispatch()
@@ -18,6 +23,9 @@ function MobileMenu() {
   function logoutHandler() {
     dispatch(logoutUser(''))
     toast.success("You have successfully logged out")
+    Cookies.set('access_token', '');
+    Cookies.set('refresh_token', '');
+    closeMenu()
   }
 
   return (
@@ -48,12 +56,10 @@ function MobileMenu() {
               Выйти
             </button>
             :
-            <Link to='/'>
+            <Link onClick={closeMenu} to='/'>
               Войти / Зарегестрироваться
             </Link>
         }
-
-
       </div>
     </div>
 

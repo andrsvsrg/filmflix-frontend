@@ -10,6 +10,9 @@ function Navigation() {
   const [isVisibleFullMenu , setIsVisibleFullMenu] = useState(false)
   const { breakPoint } = useAppSelector(state => state.breakpointReducer)
   const { accessToken } =useAppSelector(state => state.tokensSlice)
+  function closeMenu() {
+    setIsVisibleFullMenu(false)
+  }
   function toggleMobileMenu(): void {
     setIsVisibleFullMenu(prev => !prev)
   }
@@ -24,7 +27,7 @@ function Navigation() {
           &&
           <DesktopNav/>
         }
-        {isVisibleFullMenu && breakPoint !== 'l' && <MobileMenu/>}
+        {isVisibleFullMenu && breakPoint !== 'l' && <MobileMenu closeMenu={closeMenu}/>}
         {
           breakPoint !== 'l'
           &&
