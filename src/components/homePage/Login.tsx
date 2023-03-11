@@ -17,7 +17,7 @@ function Login() {
 
   const [loginUser, {isError, isSuccess, data, error, status}] = useLoginUserMutation()
   const [getUserData, { data: receivedUserData, error: errorUserData, isSuccess:isSuccessUser  }] = useLazyGetUserDataQuery();
-
+  console.log(isSuccessUser, ' isSuccessUser main')
   const dispatch = useAppDispatch()
   const toastId = 'toastId';
 
