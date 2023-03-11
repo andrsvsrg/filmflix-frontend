@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="update login user on homePage">
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="fix homepage">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +112,7 @@
       <workItem from="1678135241662" duration="2029000" />
       <workItem from="1678277150755" duration="33000" />
       <workItem from="1678529873295" duration="77000" />
-      <workItem from="1678531154528" duration="4034000" />
+      <workItem from="1678531154528" duration="4953000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -163,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678534898238</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix homepage">
+      <created>1678535228517</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678535228517</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,7 +196,8 @@
     <MESSAGE value="update Login.tsx with useEffect" />
     <MESSAGE value="add logout" />
     <MESSAGE value="update login user on homePage" />
-    <option name="LAST_COMMIT_MESSAGE" value="update login user on homePage" />
+    <MESSAGE value="fix homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix homepage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

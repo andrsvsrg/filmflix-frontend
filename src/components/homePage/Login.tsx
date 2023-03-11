@@ -31,6 +31,8 @@ function Login() {
   }
 
   useEffect(() => {
+    console.log({receivedUserData})
+    console.log({isSuccessUser})
     if(receivedUserData && isSuccessUser ) {
       dispatch(setUserData(receivedUserData))
     }
