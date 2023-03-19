@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {toast} from "react-toastify";
 import Cookies from "js-cookie";
 
-
 import Button from "../uiBricks/Button";
 import MenuDesktop from "./MenuDesktop";
 
@@ -14,9 +13,9 @@ import {logoutUser} from "../../store/reducers/TokensSlice";
 function DesktopNav() {
 
   const [isOpenSearch, setIsOpenSearch] = useState(false)
-  const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
+  const isLoginUser = useAppSelector(state => state.tokensSlice.isLoginIn)
   const dispatch = useAppDispatch()
-
+  console.log('isLoginUser', isLoginUser)
   function searchToggle(): void {
     setIsOpenSearch(prev => !prev)
   }
@@ -40,7 +39,7 @@ function DesktopNav() {
             className="h-[32px]"/>
         </div>
         {
-          userAccessToken
+          isLoginUser
             ?
             <>
               <Button onClick={logoutHandler} className="mr-4">

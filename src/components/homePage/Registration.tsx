@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import {toast} from 'react-toastify';
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import TokensSlice, {setAccessToken, setRefreshToken} from "../../store/reducers/TokensSlice";
+import useAuth from "../../hooks/useAuth";
 
 
 function Registration() {
@@ -19,8 +20,8 @@ function Registration() {
 
   // const {accessToken, refreshToken} = useAppSelector(state => state.tokensSlice)
   // const dispatch = useAppDispatch()
+ const {handlerRegister, registerResult: { errorRegister, isErrorRegister, isUninitializedRegister}} = useAuth()
 
-  const [registerUser, {isError, error, isSuccess, data, status}]  = useRegisterUserMutation();
 
   const toastId = 'toastId';
 
@@ -31,42 +32,33 @@ function Registration() {
     const birthDay = birthday.replace(/(\d*)-(\d*)-(\d*)/, '$3/$2/$1')
     const newUser: IUser = {first_name, password, email, birthday: birthDay, gender};
 
-    await registerUser(newUser);
+    await handlerRegister(newUser);
   };
 
   useEffect(() => {
-    if (isError) {
-      let errorText
-      if (data) {
-        if ('error' in data) {
-          errorText = data.error.join(', ')
-        }
-      }
-
-      if (!errorText) errorText = 'registration error'
-      toast.update(toastId, {render: `${errorText}  🤯`, type: "error", isLoading: false, autoClose: 10000,  className: 'rotateY animated'});
-    }
-
-    if (isSuccess) {
-      toast.update(toastId, {render: "successfully, You can log in 👌", type: "success", isLoading: false, autoClose: 3000, className: 'rotateX animated'});
-      // if (data) {
-      //   if ('access' in data) {
-      //     dispatch(setAccessToken(data.access))
-      //     dispatch(setRefreshToken(data.refresh))
-      //     Cookies.set('access_token', data.access);
-      //     Cookies.set('refresh_token', data.refresh);
+    if (isErrorRegister) {
+      // let errorText
+      // if (registerError) {
+      //   if ('error' in registerError) {
+      //     errorText = registerError.error
       //   }
       // }
-      setName('');
-      setPassword('');
-      setEmail('');
+      // if (!errorText) errorText = 'registration error'
+      toast.update(toastId, {render: `${JSON.stringify(errorRegister)}  🤯`, type: "error", isLoading: false, autoClose: 10000,  className: 'rotateY animated'})
+    }
+
+    if (!isErrorRegister) {
+      toast.update(toastId, {render: "successfully, You are log in 👌", type: "success", isLoading: false, autoClose: 3000, className: 'rotateX animated'})
+      setName('')
+      setPassword('')
+      setEmail('')
       setBirthDate('')
     }
 
-    if (status === 'uninitialized') {
-      toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000, className: 'rotateY animated'});
+    if (isUninitializedRegister) {
+      toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000, className: 'rotateY animated'})
     }
-  }, [isSuccess, isError, status])
+  }, [isErrorRegister, isUninitializedRegister])
 
 
   return (

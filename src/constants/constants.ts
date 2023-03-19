@@ -6,4 +6,9 @@ export const breakPoints = {
   'l': 1500,
 }
 
+export const cookies = {
+  access: 'access_token',
+  refresh: 'refresh_token'
+}
+
 

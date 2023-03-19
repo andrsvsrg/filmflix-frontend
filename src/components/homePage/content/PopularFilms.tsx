@@ -1,5 +1,6 @@
 import React from 'react';
-import FilmCard from "../../FilmCard";
+import FilmCard from "../../movieCard/FilmCard";
+
 
 function PopularFilms() {
   return (

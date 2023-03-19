@@ -1,64 +1,58 @@
-import React, {useEffect, useRef, useState} from 'react';
-import Button from "../uiBricks/Button";
-import {IResponseUserData, useLazyGetUserDataQuery, useLoginUserMutation} from "../../api/userApi";
-import {useAppDispatch, useAppSelector} from "../../hooks/redux";
-import {setAccessToken, setRefreshToken, setUserData} from "../../store/reducers/TokensSlice";
+import React, {useEffect, useState} from 'react';
 import Cookies from 'js-cookie';
 import {toast} from 'react-toastify';
 
+import Button from "../uiBricks/Button";
 
-
-
+import { useLoginUserMutation} from "../../api/userApi";
+import {useAppDispatch} from "../../hooks/redux";
+import {setAccessToken, setRefreshToken} from "../../store/reducers/TokensSlice";
+import {cookies} from "../../constants/constants";
+import useAuth from "../../hooks/useAuth";
 
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const [loginUser, {isError, isSuccess, data, error, status}] = useLoginUserMutation()
-  const [getUserData, { data: receivedUserData, error: errorUserData, isSuccess:isSuccessUser  }] = useLazyGetUserDataQuery();
-  console.log(isSuccessUser, ' isSuccessUser main')
-  const dispatch = useAppDispatch()
+  const {handleLogin, loginResult: { isErrorLogin, isSuccessLogin, dataLogin, errorLogin, loginStatus}} = useAuth()
+
   const toastId = 'toastId';
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    toast.loading("Please wait...", {closeOnClick: true,  toastId: toastId})
-    await loginUser({email, password})
-  }
-  const getUserDataF = async() => {
-    await getUserData(undefined)
+    toast.loading("Please wait...", {closeOnClick: true, toastId: toastId})
+    await handleLogin({email, password})
   }
 
-  useEffect(() => {
-    console.log({receivedUserData})
-    console.log({isSuccessUser})
-    if(receivedUserData && isSuccessUser ) {
-      dispatch(setUserData(receivedUserData))
-    }
-  }, [isSuccessUser])
 
   useEffect(() => {
-    if (isSuccess) {
-      if (data) {
-        dispatch(setAccessToken(data.access))
-        dispatch(setRefreshToken(data.refresh))
-        Cookies.set('access_token', data.access);
-        Cookies.set('refresh_token', data.refresh);
-        getUserDataF()
-      }
-      toast.update(toastId, {render: "successfully, You are log in 👌", type: "success", isLoading: false, autoClose: 3000});
+
+    if (isSuccessLogin) {
       setEmail('')
       setPassword('')
+      toast.update(toastId, {
+        render: "successfully, You are log in 👌",
+        type: "success",
+        isLoading: false,
+        autoClose: 3000
+      });
+
     }
-    if (isError) {
-      console.log(error)
-      toast.update(toastId, {render: `${JSON.stringify(error)}  🤯`, type: "error", isLoading: false,autoClose: 10000});
+    if (isErrorLogin) {
+
+
+      toast.update(toastId, {
+        render: `${JSON.stringify(errorLogin)}  🤯`,   // todo  show massage - errorLogin.data.detailed  TS error
+        type: "error",
+        isLoading: false,
+        autoClose: 10000
+      });
     }
-    if(status === 'uninitialized') {
+    if (loginStatus === 'uninitialized') {
       toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
     }
-  }, [isSuccess, isError, status])
+  }, [ isErrorLogin, isSuccessLogin, loginStatus])
 
 
   return (
@@ -85,3 +79,63 @@ function Login() {
 }
 
 export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+//   event.preventDefault();
+//   toast.loading("Please wait...", {closeOnClick: true, toastId: toastId})
+//   await loginUser({email, password})
+// }
+//
+//
+// useEffect(() => {
+//   if (isSuccess) {
+//     if (data) {
+//       dispatch(setAccessToken(data.access))
+//       dispatch(setRefreshToken(data.refresh))
+//       Cookies.set(cookies.access, data.access);
+//       Cookies.set(cookies.refresh, data.refresh);
+//     }
+//     setEmail('')
+//     setPassword('')
+//     toast.update(toastId, {
+//       render: "successfully, You are log in 👌",
+//       type: "success",
+//       isLoading: false,
+//       autoClose: 3000
+//     });
+//
+//   }
+//   if (isError) {
+//     console.log(error)
+//     toast.update(toastId, {
+//       render: `${JSON.stringify(error)}  🤯`,
+//       type: "error",
+//       isLoading: false,
+//       autoClose: 10000
+//     });
+//   }
+//   if (status === 'uninitialized') {
+//     toast.update(toastId, {render: `no server connection  🤯`, type: "error", isLoading: false, autoClose: 3000});
+//   }
+// }, [isSuccess, isError, status])

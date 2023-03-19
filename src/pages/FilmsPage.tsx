@@ -1,8 +1,12 @@
 import React from 'react';
+import MovieFilters from "../components/filmsPage/MovieFilters";
 
 function FilmsPage() {
     return (
-        <div>Films</div>
+        <div>
+
+            <MovieFilters/>
+        </div>
     );
 }
 

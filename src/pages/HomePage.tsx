@@ -12,7 +12,7 @@ import UserInfo from "../components/homePage/content/UserInfo";
 
 function HomePage() {
   const breakPoint = useAppSelector(store => store.breakpointReducer.breakPoint)
-  const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
+  const userIsLoginIn = useAppSelector(state => state.tokensSlice.isLoginIn)
   console.log(breakPoint)
   const classesLeft = getClassesLeftColm(breakPoint)
   const classesRight = getClassesRightColm(breakPoint)
@@ -27,7 +27,7 @@ function HomePage() {
         </div>
         <div className={"right-column mt-1 h-[850px] flex flex-col min-w-[240px] justify-between " + classesRight}>
           {
-            userAccessToken ?
+            userIsLoginIn ?
               <UserInfo/>
               :
               <>

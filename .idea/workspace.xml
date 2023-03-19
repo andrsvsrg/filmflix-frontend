@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="debug dispatch user  data">
+      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/MovieFilters.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/movieCard/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useAuth.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/rating_bot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/rating_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/NotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/userApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilmCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/homePage/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/UserInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/UserInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/rating_bot.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/rating_top.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +70,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\movieCard" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\homePage\content" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\img" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\header" />
@@ -112,7 +136,19 @@
       <workItem from="1678135241662" duration="2029000" />
       <workItem from="1678277150755" duration="33000" />
       <workItem from="1678529873295" duration="77000" />
-      <workItem from="1678531154528" duration="5389000" />
+      <workItem from="1678531154528" duration="14174000" />
+      <workItem from="1678611820889" duration="19234000" />
+      <workItem from="1678833058808" duration="2970000" />
+      <workItem from="1678891340851" duration="5710000" />
+      <workItem from="1678912959890" duration="4940000" />
+      <workItem from="1678963190790" duration="6950000" />
+      <workItem from="1679057432244" duration="738000" />
+      <workItem from="1679068172138" duration="995000" />
+      <workItem from="1679075236753" duration="223000" />
+      <workItem from="1679142675396" duration="7241000" />
+      <workItem from="1679174266400" duration="675000" />
+      <workItem from="1679221802259" duration="9000" />
+      <workItem from="1679222500932" duration="5284000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -177,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678538332121</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="debug dispatch user  data">
+      <created>1678538550564</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678538550564</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

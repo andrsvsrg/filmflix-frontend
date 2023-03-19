@@ -8,8 +8,8 @@ import DesktopNav from "./DesktopNav";
 function Navigation() {
 
   const [isVisibleFullMenu , setIsVisibleFullMenu] = useState(false)
-  const { breakPoint } = useAppSelector(state => state.breakpointReducer)
-  const { accessToken } =useAppSelector(state => state.tokensSlice)
+  const breakPoint = useAppSelector(state => state.breakpointReducer.breakPoint)
+  // const accessToken = useAppSelector(state => state.tokensSlice.accessToken)
   function closeMenu() {
     setIsVisibleFullMenu(false)
   }
