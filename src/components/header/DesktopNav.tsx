@@ -1,30 +1,31 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import {toast} from "react-toastify";
-import Cookies from "js-cookie";
+
+import {useAppSelector} from "../../hooks/redux";
+import useAuth from "../../hooks/useAuth";
 
 import Button from "../uiBricks/Button";
 import MenuDesktop from "./MenuDesktop";
 
-import {useAppDispatch, useAppSelector} from "../../hooks/redux";
-import {logoutUser} from "../../store/reducers/TokensSlice";
+
 
 
 function DesktopNav() {
 
   const [isOpenSearch, setIsOpenSearch] = useState(false)
-  const isLoginUser = useAppSelector(state => state.tokensSlice.isLoginIn)
-  const dispatch = useAppDispatch()
+  const {isLoginIn: isLoginUser, userData } = useAppSelector(state => state.tokensSlice)
+  const {handleLogout} = useAuth()
+
   console.log('isLoginUser', isLoginUser)
+
   function searchToggle(): void {
     setIsOpenSearch(prev => !prev)
   }
 
   function logoutHandler() {
-    dispatch(logoutUser(''))
+    handleLogout()
     toast.success("You have successfully logged out")
-    Cookies.set('access_token', '');
-    Cookies.set('refresh_token', '');
   }
 
   return (
@@ -42,6 +43,9 @@ function DesktopNav() {
           isLoginUser
             ?
             <>
+              <p className="m-auto px-3">
+                {userData.email}   {/* todo change to name or img*/}
+              </p>
               <Button onClick={logoutHandler} className="mr-4">
                 Выйти
               </Button>

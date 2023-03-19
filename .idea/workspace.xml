@@ -1,31 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="debug dispatch user  data">
-      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/MovieFilters.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/movieCard/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useAuth.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/rating_bot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/rating_top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/NotFound.tsx" afterDir="false" />
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="correct login and registration , todo refresh and verify tokens">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/userApi.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/userApi.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilmCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/Registration.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/UserInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/UserInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rating_bot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/img/rating_top.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/TokensSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +127,7 @@
       <workItem from="1679142675396" duration="7241000" />
       <workItem from="1679174266400" duration="675000" />
       <workItem from="1679221802259" duration="9000" />
-      <workItem from="1679222500932" duration="5284000" />
+      <workItem from="1679222500932" duration="6036000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -220,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678538550564</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="correct login and registration , todo refresh and verify tokens">
+      <created>1679230972548</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679230972548</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +234,8 @@
     <MESSAGE value="update login user on homePage" />
     <MESSAGE value="fix homepage" />
     <MESSAGE value="debug dispatch user  data" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug dispatch user  data" />
+    <MESSAGE value="correct login and registration , todo refresh and verify tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct login and registration , todo refresh and verify tokens" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
