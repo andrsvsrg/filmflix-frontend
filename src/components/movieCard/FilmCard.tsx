@@ -4,7 +4,11 @@ import './style.scss'
 import ratingBottom from '../../img/rating_bot.png'
 import ratingTop from '../../img/rating_top.png'
 
-function FilmCard() {
+interface Props {
+
+}
+
+function FilmCard({}:Props) {
   const rating = 70
   return (
     <div className="h-[290px] w-[150px] min-w-[150px] ">

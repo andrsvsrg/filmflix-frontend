@@ -12,3 +12,9 @@ export const cookies = {
 }
 
 
+export const TYPES = {
+  category: 'Категория',
+  year: 'Год',
+  country: 'Страна'
+}
+

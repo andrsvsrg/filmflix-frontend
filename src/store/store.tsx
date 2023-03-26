@@ -2,9 +2,11 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {userApi} from "../api/userApi";
 import breakpointReducer from './reducers/BreakpointSlice'
 import tokensSlice from "./reducers/TokensSlice";
+import {moviesApi} from "../api/moviesApi";
 
 const rootReducer = combineReducers({
   [userApi.reducerPath]: userApi.reducer,
+  [moviesApi.reducerPath] : moviesApi.reducer,
   breakpointReducer,
   tokensSlice
 })
@@ -12,7 +14,7 @@ const rootReducer = combineReducers({
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userApi.middleware)
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userApi.middleware).concat(moviesApi.middleware)
   })
 }
 

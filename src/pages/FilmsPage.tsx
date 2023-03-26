@@ -1,11 +1,11 @@
 import React from 'react';
-import MovieFilters from "../components/filmsPage/MovieFilters";
+import Index from "../components/filmsPage/movieFilters";
 
 function FilmsPage() {
     return (
-        <div>
+        <div className="container">
 
-            <MovieFilters/>
+            <Index/>
         </div>
     );
 }

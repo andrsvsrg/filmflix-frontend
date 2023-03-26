@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="correct login and registration , todo refresh and verify tokens">
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="fix homepage">
+      <change afterPath="$PROJECT_DIR$/src/api/moviesApi.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/movieFilters/Filter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/movieFilters/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useClickOutside.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/IMovieReponse.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/DesktopNav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filmsPage/MovieFilters.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/IResponses.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IResponses.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +59,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\filmsPage\movieFilters" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\movieCard" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\homePage\content" />
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\img" />
@@ -127,7 +138,10 @@
       <workItem from="1679142675396" duration="7241000" />
       <workItem from="1679174266400" duration="675000" />
       <workItem from="1679221802259" duration="9000" />
-      <workItem from="1679222500932" duration="6036000" />
+      <workItem from="1679222500932" duration="14975000" />
+      <workItem from="1679351489034" duration="175000" />
+      <workItem from="1679741978666" duration="8293000" />
+      <workItem from="1679833448827" duration="2972000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -206,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679230972548</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix homepage">
+      <created>1679231674043</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1679231674043</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,10 +253,10 @@
     <MESSAGE value="update Login.tsx with useEffect" />
     <MESSAGE value="add logout" />
     <MESSAGE value="update login user on homePage" />
-    <MESSAGE value="fix homepage" />
     <MESSAGE value="debug dispatch user  data" />
     <MESSAGE value="correct login and registration , todo refresh and verify tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct login and registration , todo refresh and verify tokens" />
+    <MESSAGE value="fix homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix homepage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
