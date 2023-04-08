@@ -12,7 +12,6 @@ interface Props {
   isMobile?: boolean
 }
 
-
 const Filter: React.FC<Props> = ({ variants, type , isMobile}) => {
   const [isOpenCategory, setIsOpenCategory] = useState<boolean>(false);
   const [selectedVariants, setSelectedVariants] = useState<string[]>([]);

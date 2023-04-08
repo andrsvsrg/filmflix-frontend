@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="first connecting  with films api">
-      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/FilmsContent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/filmsPage/SortedBy.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useScrollToBottom.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/WatchingFilmPage.tsx" afterDir="false" />
+    <list default="true" id="6d30354d-2e13-4bbf-91ca-2c6d60dfeea9" name="Changes" comment="update filmsPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/moviesApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/moviesApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filmsPage/movieFilters/Filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filmsPage/Filter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filmsPage/movieFilters/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filmsPage/MoviesFilters.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/MobileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/MobileMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/homePage/content/PopularFilms.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movieCard/FilmCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movieCard/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movieCard/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useClickOutside.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useClickOutside.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/IMovieReponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/IMovieReponse.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FilmsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/filmsPage/Filter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filmsPage/Filter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,25 +27,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/karto/WebstormProjects/online-films&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\karto\\WebstormProjects\\online-films\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/karto/WebstormProjects/online-films",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\karto\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "ts.external.directory.path": "C:\\Users\\karto\\WebstormProjects\\online-films\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\karto\WebstormProjects\online-films\src\components\filmsPage" />
@@ -161,6 +142,10 @@
       <workItem from="1680695268421" duration="1324000" />
       <workItem from="1680945709507" duration="11511000" />
       <workItem from="1680968914195" duration="835000" />
+      <workItem from="1680986590171" duration="732000" />
+      <workItem from="1680987369622" duration="93000" />
+      <workItem from="1680987476151" duration="153000" />
+      <workItem from="1680987671198" duration="267000" />
     </task>
     <task id="LOCAL-00001" summary="adaptive navigation">
       <created>1677415927712</created>
@@ -253,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679837798008</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update filmsPage">
+      <created>1680986887413</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1680986887413</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +275,8 @@
     <MESSAGE value="correct login and registration , todo refresh and verify tokens" />
     <MESSAGE value="fix homepage" />
     <MESSAGE value="first connecting  with films api" />
-    <option name="LAST_COMMIT_MESSAGE" value="first connecting  with films api" />
+    <MESSAGE value="update filmsPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="update filmsPage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
