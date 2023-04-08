@@ -18,3 +18,13 @@ export const TYPES = {
   country: 'Страна'
 }
 
+export const SORTED_BY = {
+  rating: 'Рейтингу',
+  premiereDate: 'Дате премьеры',
+  addedDate: 'Дате добавления'
+}
+export const SORTED_VALUE = Object.values(SORTED_BY)
+export const SORTED_KEYS = Object.keys(SORTED_BY)
+
+export const API_KEY_CDN = 'VRBnPfyU4yxrh8oRrryPCQT01iqk45ws'
+

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {RefObject, useRef} from 'react';
 import {Link} from "react-router-dom";
 import {toast} from "react-toastify";
 
@@ -8,17 +8,25 @@ import SearchInput from "./SearchInput";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import {logoutUser} from "../../store/reducers/TokensSlice";
 import Cookies from "js-cookie";
+import useClickOutside from "../../hooks/useClickOutside";
 
 interface Props {
-  closeMenu: () => void
+  closeMenu: () => void,
+  isVisibleMenu: boolean
 }
 
 
-function MobileMenu({closeMenu}:Props) {
+function MobileMenu({isVisibleMenu, closeMenu}:Props) {
 
-  const userAccessToken = useAppSelector(state => state.tokensSlice.accessToken)
+  const userIsLoginIn = useAppSelector(state => state.tokensSlice.isLoginIn)
+  const menuRef = useRef<HTMLDivElement>(null)
   const dispatch = useAppDispatch()
 
+  useClickOutside(menuRef, () => {  // todo fix button menu close
+    if(isVisibleMenu) {
+      closeMenu()
+    }
+  })
 
   function logoutHandler() {
     dispatch(logoutUser(''))
@@ -29,8 +37,8 @@ function MobileMenu({closeMenu}:Props) {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-full w-full bg-under-menu">
-      <div className=" w-[70%] h-full bg-bg-mb-menu py-[10px] px-5">
+    <div  className="fixed top-0 left-0 right-0 bottom-0 h-full w-full bg-under-menu z-100">
+      <div  ref={menuRef} className=" w-[70%] h-full bg-bg-mb-menu py-[10px] px-5">
         <SearchInput className='pb-5 pt-5'/>
         <SearchIcon className="mb-4"/>
 
@@ -50,7 +58,7 @@ function MobileMenu({closeMenu}:Props) {
           {/*<li className=" mb-5"><Link className="my-auto hover:text-nav-active transition-colors mb-4" to="/">Youtube</Link></li>*/}
         </ul>
         {
-          userAccessToken
+          userIsLoginIn
             ?
             <button onClick={logoutHandler}>
               Выйти

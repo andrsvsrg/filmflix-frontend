@@ -13,11 +13,9 @@ import UserInfo from "../components/homePage/content/UserInfo";
 function HomePage() {
   const breakPoint = useAppSelector(store => store.breakpointReducer.breakPoint)
   const userIsLoginIn = useAppSelector(state => state.tokensSlice.isLoginIn)
-  console.log(breakPoint)
   const classesLeft = getClassesLeftColm(breakPoint)
   const classesRight = getClassesRightColm(breakPoint)
   const classesPage = (breakPoint === 'xxs' || breakPoint === 'xs') ? 'flex-col' : 'flex-row'
-
 
   return (
     <div className='container'>
@@ -34,10 +32,7 @@ function HomePage() {
                 <Login/>
                 <Registration/>
               </>
-
-
           }
-
         </div>
       </div>
     </div>

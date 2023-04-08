@@ -15,6 +15,7 @@ import {setAccessToken, setRefreshToken, setUserData} from "./store/reducers/Tok
 import NotFound from "./pages/NotFound";
 import Cookies from "js-cookie";
 import {cookies} from "./constants/constants";
+import WatchingFilmPage from "./pages/WatchingFilmPage";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='/multfilms' element={<MultfilmsPage/>}/>
           <Route path='/series' element={<SeriesPage/>}/>
           <Route path='/*' element={<NotFound/>}/>
+          <Route path='/film' element={<WatchingFilmPage/>}/>
         </Routes>
         <Footer/>
       </div>

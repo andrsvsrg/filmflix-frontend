@@ -5,6 +5,7 @@ $ratingSize: 85px;
     height: ($ratingSize/5);
     position: relative;
     width: $ratingSize;
+    z-index: -1;
 &:before {
  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIGZpbGw9IiM3ZjhjOGQiID4gICAgPHBhdGggZD0iTSAyNSAyLjI3MzQzNzUgTCAxOC42MDkzNzUgMTguNDgwNDY5IEwgMC44MTA1NDY4OCAxOS40MTc5NjkgTCAxNC42NDg0MzggMzAuNDEyMTA5IEwgMTAuMDcwMzEyIDQ3LjIyMjY1NiBMIDI1IDM3Ljc3MTQ4NCBMIDM5LjkyOTY4OCA0Ny4yMjI2NTYgTCAzNS4zNTE1NjIgMzAuNDEyMTA5IEwgNDkuMTg5NDUzIDE5LjQxNzk2OSBMIDMxLjM5MDYyNSAxOC40ODA0NjkgTCAyNSAyLjI3MzQzNzUgeiI+PC9wYXRoPjwvc3ZnPg==");
      background-repeat: repeat-x;
@@ -18,6 +19,7 @@ $ratingSize: 85px;
      right: 0;
      top: 0;
      width: $ratingSize;
+     z-index: 0;
  }
 > span {
     display: block;
@@ -26,6 +28,7 @@ $ratingSize: 85px;
     height: ($ratingSize/5);
     position: absolute;
     overflow: hidden;
+    z-index: 0;
 &:before {
  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTAgNTAiIGZpbGw9IiNmZmE0MDAiID4gICANCiA8cGF0aCBkPSJNIDI1IDIuMjczNDM3NSBMIDE4LjYwOTM3NSAxOC40ODA0NjkgTCAwLjgxMDU0Njg4IDE5LjQxNzk2OSBMIDE0LjY0ODQzOCAzMC40MTIxMDkgTCAxMC4wNzAzMTIgNDcuMjIyNjU2IEwgMjUgMzcuNzcxNDg0IEwgMzkuOTI5Njg4IDQ3LjIyMjY1NiBMIDM1LjM1MTU2MiAzMC40MTIxMDkgTCA0OS4xODk0NTMgMTkuNDE3OTY5IEwgMzEuMzkwNjI1IDE4LjQ4MDQ2OSBMIDI1IDIuMjczNDM3NSB6Ij48L3BhdGg+PC9zdmc+");
      background-repeat: repeat-x;
@@ -39,6 +42,7 @@ $ratingSize: 85px;
      right: 0;
      text-indent: 10000px;
      top: 0;
+     z-index: 0;
  }
 }
 

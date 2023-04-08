@@ -1,13 +1,27 @@
 import React from 'react';
-import Index from "../components/filmsPage/movieFilters";
+
+import FilmsContent from "../components/filmsPage/FilmsContent";
+import MovieFilters from "../components/filmsPage/MoviesFilters";
+
+import {useAppSelector} from "../hooks/redux";
+
 
 function FilmsPage() {
-    return (
-        <div className="container">
+  const breakPoint = useAppSelector(state => state.breakpointReducer.breakPoint)
 
-            <Index/>
-        </div>
-    );
+
+  return (
+
+    <div className="container">
+      {breakPoint === 's' || breakPoint === 'xs' || breakPoint === 'xxs'
+        ?
+        <MovieFilters isMobile={true}/>
+        :
+        <MovieFilters/>
+      }
+      <FilmsContent/>
+    </div>
+  );
 }
 
 export default FilmsPage;

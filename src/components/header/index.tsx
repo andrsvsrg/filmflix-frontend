@@ -1,21 +1,24 @@
-import React, {useState} from 'react';
+import React, {RefObject, useRef, useState} from 'react';
 import Logo from "./Logo";
 import MobileMenu from "./MobileMenu";
 import {useAppSelector} from "../../hooks/redux";
 import ButtonMenuMobile from "./ButtonMenuMobile";
 import DesktopNav from "./DesktopNav";
 
+
 function Navigation() {
 
   const [isVisibleFullMenu , setIsVisibleFullMenu] = useState(false)
   const breakPoint = useAppSelector(state => state.breakpointReducer.breakPoint)
-  // const accessToken = useAppSelector(state => state.tokensSlice.accessToken)
+
   function closeMenu() {
     setIsVisibleFullMenu(false)
   }
   function toggleMobileMenu(): void {
     setIsVisibleFullMenu(prev => !prev)
   }
+
+
 
   return (
     <nav className="fixed top-0 h-[65px] flex w-full flex-row px-4 py-2 bg-[#191A1D]">
@@ -27,7 +30,7 @@ function Navigation() {
           &&
           <DesktopNav/>
         }
-        {isVisibleFullMenu && breakPoint !== 'l' && <MobileMenu closeMenu={closeMenu}/>}
+        {isVisibleFullMenu && breakPoint !== 'l' && <MobileMenu isVisibleMenu={isVisibleFullMenu} closeMenu={closeMenu}/>}
         {
           breakPoint !== 'l'
           &&

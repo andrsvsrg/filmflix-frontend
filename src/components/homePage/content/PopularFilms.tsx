@@ -7,11 +7,7 @@ function PopularFilms() {
     <div className="popularFilms pc-sm:hidden">
       <h3 className="mt-[70px] mb-3 text-center text-[24px] text-nav-noactive">Popular films</h3>
       <div className="flex gap-3 overflow-hidden p-[20px]">
-        <FilmCard/>
-        <FilmCard/>
-        <FilmCard/>
-        <FilmCard/>
-        <FilmCard/>
+        {/*<FilmCard name={'Name1'} year={2020} />*/}
       </div>
       <div className="h-full">
         <button

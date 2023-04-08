@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import {MovieResponse} from "../models/IMovieReponse";
+import {API_KEY_CDN} from "../constants/constants";
 
 
-const API_KEY = 'VRBnPfyU4yxrh8oRrryPCQT01iqk45ws'  // move to constant todo
+
 
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
@@ -12,7 +13,7 @@ export const moviesApi = createApi({
   endpoints: (builder) => ({
     getMovies: builder.query<MovieResponse, number>({
       query: (page = 1) => ({
-        url: `movies?api_token=${API_KEY}&ordering=id&direction=desc&page=${page}`,
+        url: `movies?api_token=${API_KEY_CDN}&ordering=id&direction=desc&page=${page}`,
         method: 'GET',
       }),
     }),

@@ -26,8 +26,9 @@ module.exports = {
         'under-menu': 'rgba(0,0,0,.6)'
       },
 
-
     },  // дополняе свойства
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/line-clamp')
+  ]
 }

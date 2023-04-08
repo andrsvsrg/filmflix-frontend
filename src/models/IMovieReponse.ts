@@ -1,7 +1,7 @@
 export interface MovieResponse {
   result:         boolean;
   php:            number;
-  data:           Datum[];
+  data:           IMovie[];
   current_page:   number;
   from:           number;
   to:             number;
@@ -16,7 +16,7 @@ export interface MovieResponse {
   total_count:    number;
 }
 
-export interface Datum {
+export interface IMovie {
   id:               number;
   ru_title:         string;
   orig_title:       string;
