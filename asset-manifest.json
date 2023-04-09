@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ffc8d5b0.css",
-    "main.js": "/static/js/main.31ee4b3b.js",
-    "static/media/logo.svg": "/static/media/logo.4b7b4c3831a165732280c556868a6111.svg",
-    "static/media/photo_none_man.png": "/static/media/photo_none_man.d606d4a72ac9d4c975e2.png",
-    "static/media/search-users.svg": "/static/media/search-users.2cb324e3bad20196b1431ed7c2902869.svg",
-    "static/media/search-actor.svg": "/static/media/search-actor.44f976947209732d4d2f18cbbc11bbdf.svg",
-    "static/media/search-films.svg": "/static/media/search-films.0ee0b495083b33b1e5d0420ccf56a0ee.svg",
-    "index.html": "/index.html",
-    "main.ffc8d5b0.css.map": "/static/css/main.ffc8d5b0.css.map",
-    "main.31ee4b3b.js.map": "/static/js/main.31ee4b3b.js.map"
+    "main.css": "/filmflix-frontend/static/css/main.ffc8d5b0.css",
+    "main.js": "/filmflix-frontend/static/js/main.85a28106.js",
+    "static/media/logo.svg": "/filmflix-frontend/static/media/logo.4b7b4c3831a165732280c556868a6111.svg",
+    "static/media/photo_none_man.png": "/filmflix-frontend/static/media/photo_none_man.d606d4a72ac9d4c975e2.png",
+    "static/media/search-users.svg": "/filmflix-frontend/static/media/search-users.2cb324e3bad20196b1431ed7c2902869.svg",
+    "static/media/search-actor.svg": "/filmflix-frontend/static/media/search-actor.44f976947209732d4d2f18cbbc11bbdf.svg",
+    "static/media/search-films.svg": "/filmflix-frontend/static/media/search-films.0ee0b495083b33b1e5d0420ccf56a0ee.svg",
+    "index.html": "/filmflix-frontend/index.html",
+    "main.ffc8d5b0.css.map": "/filmflix-frontend/static/css/main.ffc8d5b0.css.map",
+    "main.85a28106.js.map": "/filmflix-frontend/static/js/main.85a28106.js.map"
   },
   "entrypoints": [
     "static/css/main.ffc8d5b0.css",
-    "static/js/main.31ee4b3b.js"
+    "static/js/main.85a28106.js"
   ]
 }
